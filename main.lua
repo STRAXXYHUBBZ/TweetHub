@@ -51,6 +51,9 @@ SectionPlayer:NewButton("Fly FE", "This button makes you fly! Filtering Enabled!
 loadstring(game:HttpGet("https://pastebin.com/raw/S31y4g5J"))()
 end)
 
+SectionPlayer:NewButton("Noclip FE", "This button makes you Noclip! Filtering Enabled!!", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Cj6JsTJ5"))()
+end)
 
 SectionPlayer:NewSlider("Player Speed", "Change your players walking/running speed.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
