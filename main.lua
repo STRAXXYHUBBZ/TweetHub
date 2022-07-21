@@ -1,3 +1,29 @@
+function Invite()
+    if not isfolder("Tweet") then makefolder("Tweet") end
+        (syn and syn.request or http_request)({
+            Url = "http://127.0.0.1:6463/rpc?v=1",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json",
+                ["Origin"] = "https://discord.com"
+            },
+            Body = game:GetService("HttpService"):JSONEncode({
+                cmd = "INVITE_BROWSER",
+                args = {
+                    code = "fmqQG3V8pv"
+                },
+                nonce = game:GetService("HttpService"):GenerateGUID(false)
+            }),
+            writefile("Tweet.txt", "discord")
+        })
+end
+do
+    Invite()
+    local inv = "https://discord.gg/fmqQG3V8pv"
+end
+
+
+
 local HWIDTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/STRAXXYHUBBZ/lol/main/ftYgFTyHJ"))()
 local PlayerName = game.Players.LocalPlayer
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
